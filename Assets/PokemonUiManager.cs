@@ -32,6 +32,8 @@ public class PokemonUiManager : MonoBehaviour
 
     public void SubmitInput()
     {
+        // Note: I'd add visible text and a loading bar for the user so they can see feedback on their input, instead of just logging errors
+
         // Get input
         string pokemonName = NameInput.text.ToLower();
 
@@ -59,7 +61,7 @@ public class PokemonUiManager : MonoBehaviour
         WeightText.text = "Weight: " + data.weight.ToString();
 
         // Assume you have fetched Abilities and Base Stats data in a suitable format.
-        AbilitiesText.text = "Abilities: " /*+ <Abilities Data> */;
         BaseStatsText.text = "Base Stats: " /*+ <Base Stats Data> */;
+        AbilitiesText.text = "Abilities: " /*+ <Abilities Data> */;
     }
 }

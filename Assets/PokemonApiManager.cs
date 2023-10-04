@@ -45,6 +45,7 @@ public class PokemonApiManager : MonoBehaviour
                 Debug.LogError("Data processing error: " + request.error);
                 yield break;
             case UnityWebRequest.Result.ProtocolError:
+                // Note: I'd add a check to see if the Pokemon exists and display that to the user, instead of returning a 404 error
                 Debug.LogError("Protocol error: " + request.error);
                 yield break;
             case UnityWebRequest.Result.Success:

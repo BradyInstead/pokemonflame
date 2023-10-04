@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-// Depending on the how the project expands, it might be best to split these into new files
+// Note: Depending on the how the project expands, it might be best to split these into new files
+// Keeping it in a single file now for readability
 
 [System.Serializable]
 public class PokemonData
