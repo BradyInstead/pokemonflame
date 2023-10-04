@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 
+// Depending on the how the project expands, it might be best to split these into new files
+
 [System.Serializable]
 public class PokemonData
 {

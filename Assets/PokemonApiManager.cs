@@ -52,6 +52,6 @@ public class PokemonApiManager : MonoBehaviour
                 break;
         }
 
-        _dataManager.SetData(request.downloadHandler.text);
+        _dataManager.LoadFromJson(request.downloadHandler.text);
     }
 }

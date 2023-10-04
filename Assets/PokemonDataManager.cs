@@ -9,19 +9,19 @@ public class PokemonDataManager : MonoBehaviour
     public delegate void OnDataChange();
     public OnDataChange onDataChange;
 
-    public void SetData(string rawData)
+    public void LoadFromJson(string jsonData)
     {
         // Convert data
-        Data = JsonUtility.FromJson<PokemonData>(rawData);
+        Data = JsonUtility.FromJson<PokemonData>(jsonData);
 
         // Save data
-        SaveData(rawData);
+        SaveData(jsonData);
 
         // Invoke onDataChange so elements dependent on the data can update
         onDataChange?.Invoke();
     }
 
-    private void SaveData(string rawData)
+    private void SaveData(string jsonData)
     {
         // Create data path
         string path = Application.dataPath + "/../data.json"; // The '/../' moves one directory up to the project root.
@@ -29,7 +29,7 @@ public class PokemonDataManager : MonoBehaviour
         try
         {
             // Write the json data to a file.
-            File.WriteAllText(path, rawData);
+            File.WriteAllText(path, jsonData);
         }
         catch(Exception ex)
         {
